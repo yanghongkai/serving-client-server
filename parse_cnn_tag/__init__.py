@@ -104,7 +104,6 @@ class Classify():
 
         request.inputs['dropout_keep_prob_mlp'].CopyFrom(
             tf.contrib.util.make_tensor_proto(1.0, dtype=tf.float32))
-        # for _ in range(100000):
         model_result = stub.Predict(request, 60.0)
         # model_result = stub.Predict.future(request, 60.0)
         # print(self.signature_name, model_result)
